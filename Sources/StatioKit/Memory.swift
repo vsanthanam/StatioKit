@@ -14,6 +14,23 @@ public enum Memory {
     }
     
     public struct Snapshot: Equatable, Hashable {
+        
+        public init(physicalMemory: UInt64,
+                    freeMemory: UInt64,
+                    active: UInt64,
+                    inactive: UInt64,
+                    wired: UInt64,
+                    pageIns: UInt64,
+                    pageOuts: UInt64) {
+            self.physicalMemory = physicalMemory
+            self.freeMemory = freeMemory
+            self.active = active
+            self.inactive = inactive
+            self.wired = wired
+            self.pageIns = pageIns
+            self.pageOuts = pageOuts
+        }
+        
         public let physicalMemory: UInt64
         public let freeMemory: UInt64
         public let active: UInt64
